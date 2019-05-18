@@ -14,7 +14,8 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  sides = [a, b, c]
+  sides = [a, b, c].sort!
+  raise TriangleError if sides[0]<=0 || sides[0] + sides[1] <= sides[2]
   case sides.uniq.length
   when 1
     :equilateral
